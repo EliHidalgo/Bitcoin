@@ -16,10 +16,10 @@ const gettingRate = useCallback(() => {
             let rateSlice2 = rateResult.slice(3)
             let newRate = rateSlice1.concat(rateSlice2);
             //console.log(newRate, 'newRate', typeof newRate)
-            setRate(new Intl.NumberFormat('es-CL').format(newRate))
-            //console.log(newRate, 'it worked');
-            /*let finalRate = parseFloat(newRate);
-            setRate(Math.round(finalRate));*/
+            let floatRate = parseFloat(newRate);
+            //console.log(floatRate, 'floatRate', typeof floatRate);
+            let final = Math.round(floatRate);
+            setRate(new Intl.NumberFormat('es-CL').format(final))
         })
         .catch( err => {
             console.log(err);
