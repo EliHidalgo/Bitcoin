@@ -1,0 +1,18 @@
+.container-chart {
+    width: 80%;
+    background-color: #FFFFFF;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 2px solid #E7E7E7;
+    box-shadow: 2px 2px #E7E7E7;
+}
+.container-chart p {
+    text-align: left;
+    margin-left: 6px;
+    margin-bottom: 40px;
+}
+
+canvas.chartjs-render-monitor {
+    width: 100%;
+}

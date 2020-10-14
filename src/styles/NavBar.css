@@ -1,0 +1,13 @@
+.navbar-container {
+    background-color: #3265CC;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 5px 20px;
+}
+
+.navbar-container h2 {
+    color: #ffffff;
+   
+
+}
