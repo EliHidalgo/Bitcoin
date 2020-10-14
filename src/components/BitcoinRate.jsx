@@ -10,12 +10,11 @@ const BitcoinRate = () => {
 const gettingRate = useCallback(() => {
     axios.get('https://api.coindesk.com/v1/bpi/currentprice/USD.json')
         .then(result => {
-            console.log(result.data.bpi.USD.rate);
-            //console.log(result.data.time.updated);
-            let slicing = result.data.bpi.USD.rate;
-            let slicing2 = slicing.slice(0,2);
-            let slicing3 = slicing.slice(3)
-            let newRate = slicing2.concat(slicing3);
+            //console.log(result.data.bpi.USD.rate);
+            let rateResult = result.data.bpi.USD.rate;
+            let rateSlice1 = rateResult.slice(0,2);
+            let rateSlice2 = rateResult.slice(3)
+            let newRate = rateSlice1.concat(rateSlice2);
             //console.log(newRate, 'newRate', typeof newRate)
             setRate(new Intl.NumberFormat('es-CL').format(newRate))
             //console.log(newRate, 'it worked');
@@ -25,7 +24,7 @@ const gettingRate = useCallback(() => {
         .catch( err => {
             console.log(err);
         }); } , []);
-console.log(typeof rate, 'rate')
+
      
     useEffect(() => {
         setInterval(
@@ -41,11 +40,8 @@ console.log(typeof rate, 'rate')
             <div className="container-rate">
                 <h4>Valor actual</h4>
                 <h2><span className="usd-symbol">$</span>{rate} USD</h2>
-                
             </div>
-          
-
-    <BpiChart/>
+        <BpiChart/>
         </div>
     )
 }

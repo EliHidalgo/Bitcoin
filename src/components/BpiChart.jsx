@@ -10,7 +10,7 @@ const BpiChart = () => {
     const gettingBpiValues = () => {
         axios.get('https://api.coindesk.com/v1/bpi/historical/close.json?start=2020-08-09&end=2020-09-09')
             .then(result => {
-                console.log(result.data.bpi);
+                //console.log(result.data.bpi);
                 setChartValues(result.data.bpi);                             
             })
             .catch( err => {
